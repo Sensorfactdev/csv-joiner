@@ -1,6 +1,6 @@
 {
-  "name": "electron-webpack-quick-start",
-  "version": "0.0.0",
+  "name": "csvjoiner",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "dev": "electron-webpack dev",
@@ -9,15 +9,39 @@
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
   "dependencies": {
-    "source-map-support": "^0.5.4"
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "source-map-support": "^0.5.4",
+    "styled-components": "^3.2.6",
+    "vue": "^2.5.16"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/preset-react": "^7.0.0-beta.46",
+    "babel-loader": "^8.0.0-beta",
     "electron": "1.8.4",
-    "electron-builder": "^20.8.1",
+    "electron-builder": "^20.10.0",
     "electron-webpack": "^2.0.1",
-    "webpack": "^4.4.1"
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "webpack": "^4.6.0"
   },
   "resolutions": {
     "webpack-sources": "1.0.1"
+  },
+  "electronWebpack": {
+    "title": true,
+    "main": {
+      "sourceDirectory": "src/main"
+    },
+    "renderer": {
+      "sourceDirectory": "src/renderer",
+      "webpackConfig": "webpack.renderer.additions.js"
+    }
   }
 }

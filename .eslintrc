@@ -1,0 +1,72 @@
+{
+  "extends": [
+    "airbnb"
+  ],
+  "globals": {
+    "cy": true,
+    "Cypress": true
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "react/jsx-no-bind": 0,
+    "react/no-danger": 0,
+    "react/no-typos": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "no-underscore-dangle": 0,
+    "react/require-extension": 0,
+    "no-console": 0,
+    "no-confusing-arrow": 0,
+    "max-len": [
+      "error",
+      120,
+      4,
+      {
+        "ignoreUrls": true
+      }
+    ],
+    "new-cap": 0,
+    "no-param-reassign": [
+      2,
+      {
+        "props": false
+      }
+    ],
+    "import/no-named-as-default": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/extensions": 0,
+    "import/imports-first": 0,
+    "prefer-default-export": 0,
+    "react/forbid-prop-types": 0,
+    "no-restricted-syntax": 0,
+    "jsx-a11y/accessible-emoji": 0,
+    "no-loop-func": 0,
+    "guard-for-in": 0,
+    "react/no-unused-prop-types": 0,
+    "no-extra-boolean-cast": 0,
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 2,
+        "maxEOF": 1,
+        "maxBOF": 0
+      }
+    ]
+  }
+}
