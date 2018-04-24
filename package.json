@@ -1,13 +1,17 @@
 {
   "name": "csvjoiner",
-  "version": "0.0.1",
+  "productName": "CSV Joiner",
   "license": "MIT",
+  "version": "1.0.0",
+  "description": "A desktop tool for joining CSV files",
   "scripts": {
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
+  "repository": "git@github.com:Sensorfactdev/csv-joiner.git",
+  "author": "Ramon Gebben <ramon@sensorfact.nl>",
   "dependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
@@ -42,6 +46,36 @@
     "renderer": {
       "sourceDirectory": "src/renderer",
       "webpackConfig": "webpack.renderer.additions.js"
+    }
+  },
+  "build": {
+    "appId": "nl.sensorfact.csv-joiner",
+    "files": [
+      "**/*",
+      "build/icon.*"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "nsis": {
+      "createDesktopShortcut": "always"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 200
+        },
+        {
+          "x": 440,
+          "y": 200,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "category": "Development"
     }
   }
 }

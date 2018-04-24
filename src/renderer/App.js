@@ -4,6 +4,7 @@ import { remote } from 'electron';
 import DropArea from './components/DropArea';
 import Files from './components/Files';
 import Button from './components/Button';
+import Finished from './components/Finished';
 import Footer from './components/Footer';
 
 import joinFiles from './utils/joinFiles';
@@ -73,6 +74,7 @@ class App extends Component {
 
     this.state = {
       files: null,
+      done: false,
     };
 
     this.onFileDrop = this.onFileDrop.bind(this);
@@ -106,20 +108,20 @@ class App extends Component {
 
     return joinFiles(this.state.files, dest)
       .then(() => {
-        console.log('files joined');
+        this.setState(() => ({ files: null, done: true }));
       });
   }
 
   render() {
-    const { files } = this.state;
+    const { files, done } = this.state;
     return (
       <MainWrapper>
         <Logo src="https://static.sensorfact.nl/CSV_Joiner_logo_white.png" />
-        {!files &&
+        {!files && !done &&
           <DropArea
             onFileDrop={this.onFileDrop}
           />}
-        {files &&
+        {files && !done &&
           <FilesWrapper>
             <Files
               files={files}
@@ -136,7 +138,7 @@ class App extends Component {
             </RestartButton>
           </FilesWrapper>
         }
-
+        {done && <Finished /> }
         <Footer />
       </MainWrapper>
     );

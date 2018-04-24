@@ -40,9 +40,9 @@ export default function joinFiles(files, dest) {
   let current = Promise.resolve();
   for (const srcIndex in streams) {
     const src = streams[srcIndex];
-    const keepHeader = srcIndex === '0';
-    const writeStream = createWriteStream(dest, { encoding: 'utf8', flags: 'a' });
-    current = current.then(() => processStream(src, writeStream, keepHeader));
+    const firstRun = srcIndex === '0';
+    const writeStream = createWriteStream(dest, { encoding: 'utf8', flags: firstRun ? 'w' : 'a' });
+    current = current.then(() => processStream(src, writeStream, firstRun));
   }
 
   return current;
