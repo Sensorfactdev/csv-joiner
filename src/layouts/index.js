@@ -28,6 +28,10 @@ const MadeWithLove = styled.a`
   position: absolute;
   right: 1em;
   color: ${colors.white} !important;
+
+  @media screen and (max-width: 800px) {
+    position: static;
+  }
 `;
 
 const SensorfactLogo = styled.img`
@@ -39,7 +43,11 @@ const Links = styled.ul`
   display: inline-block;
   list-style: none;
   padding: 0;
-  margin: 1.2em;
+  margin: 1.2em 0;
+
+  @media screen and (max-width: 800px) {
+
+  }
 
   li {
     display: inline-block;

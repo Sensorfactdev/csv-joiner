@@ -26,6 +26,7 @@ const Jumbotron = styled.header`
     margin: 0 auto 0.4em auto;
     @media screen and (max-width: 800px) {
       font-size: ${typography.headerSize * 0.8}px;
+      margin-top: 3.5em;
     }
   }
 
@@ -67,6 +68,10 @@ const Screenshot = styled.img`
   width: 100%; max-width: 400px;
   display: block;
   margin: 0 auto 0 auto;
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const Section = styled.section`
@@ -77,9 +82,11 @@ const Section = styled.section`
 const Column = styled.div`
   max-width: 50%;
   width: 100%;
-  display: inline-block;
   float: left;
 
+  @media screen and (max-width: 800px) {
+    max-width: 100%;
+  }
 
   ${Button} {
     margin-top: 1em;
