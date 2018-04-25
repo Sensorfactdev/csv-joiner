@@ -96,7 +96,7 @@ const Column = styled.div`
 `;
 
 const onDownload = () => {
-  global.window.open('https://github.com/Sensorfactdev/csv-joiner');
+  global.window.open('https://github.com/Sensorfactdev/csv-joiner/releases/latest');
 }
 
 const IndexPage = () => (

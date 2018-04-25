@@ -96,7 +96,7 @@ const Layout = ({ children, data }) => (
           <a href="https://github.com/Sensorfactdev/csv-joiner">Source on Github</a>
         </li>
         <li>
-          <Link to="/download">Download</Link>
+          <a href="https://github.com/Sensorfactdev/csv-joiner/releases/latest">Download</a>
         </li>
       </Links>
     </Footer>
