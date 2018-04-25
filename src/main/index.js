@@ -7,8 +7,17 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow;
 
+const WIDTH = 400;
+const HEIGHT = 600;
+
 function createMainWindow() {
-  const window = new BrowserWindow({ width: 400, height: 600 });
+  const window = new BrowserWindow({
+    minHeight: HEIGHT,
+    height: HEIGHT,
+    minWidth: WIDTH,
+    width: WIDTH,
+    resizable: false,
+  });
 
   if (isDevelopment) {
     window.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`);

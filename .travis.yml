@@ -50,5 +50,5 @@ branches:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
 
 
- notifications:
-    slack: ${SLACK_CREDS}
+notifications:
+  slack: "${SLACK_CREDS}"
