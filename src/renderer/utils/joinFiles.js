@@ -1,6 +1,8 @@
 import { createReadStream, createWriteStream } from 'fs';
 import { Transform } from 'stream';
 
+const ENCODING = 'utf8';
+
 function getTransformStream() {
   let foundHeader = false;
 
@@ -35,13 +37,17 @@ function processStream(src, dest, keepHeader) {
 }
 
 export default function joinFiles(files, dest) {
-  const streams = files.map(path => createReadStream(path, { encoding: 'utf8' }));
+  const streams = files.map(path => (
+    createReadStream(path, { encoding: ENCODING }).setEncoding(ENCODING)
+  ));
 
   let current = Promise.resolve();
   for (const srcIndex in streams) {
     const src = streams[srcIndex];
     const firstRun = srcIndex === '0';
     const writeStream = createWriteStream(dest, { encoding: 'utf8', flags: firstRun ? 'w' : 'a' });
+    writeStream.setDefaultEncoding(ENCODING);
+
     current = current.then(() => processStream(src, writeStream, firstRun));
   }
 

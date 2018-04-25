@@ -46,6 +46,7 @@ injectGlobal`
 
 const MainWrapper = styled.div`
   text-align: center;
+  padding: 1em;
 `;
 
 const Logo = styled.img`
