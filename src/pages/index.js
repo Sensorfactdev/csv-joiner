@@ -83,6 +83,7 @@ const Column = styled.div`
   max-width: 50%;
   width: 100%;
   float: left;
+  padding: 0 1em;
 
   @media screen and (max-width: 800px) {
     max-width: 100%;
@@ -93,6 +94,26 @@ const Column = styled.div`
     color: ${colors.sensorfactBlue};
     border-color: ${colors.sensorfactBlue};
   }
+`;
+
+const Row = styled.div`
+`;
+
+const Tile = styled.div`
+  vertical-align: top;
+  display: inline-block;
+  max-width: 30%;
+  margin-right: 1em;
+  text-align: left;
+
+  @media screen and (max-width: 800px) {
+    max-width: 100%;
+    text-align: center;
+  }
+`;
+
+const OSImage = styled.img`
+  max-height: 100px;
 `;
 
 const onDownload = () => {
@@ -134,10 +155,36 @@ const IndexPage = () => (
       </Column>
       <Clearfix />
     </Section>
+    <br />
+    <Section>
+      <h1>Installation</h1>
+      <p style={{ maxWidth: '400px' }}>To start the installation you will need to download the installer for you're platform.</p>
+      <Row>
+        <Tile>
+          <OSImage src="https://i.imgur.com/xfWSDxA.png" alt="windows" />
+          <h3>Windows</h3>
+          <p>
+            Right click the downloaded .exe file and select "Run as administrator".
+          </p>
+        </Tile>
+        <Tile>
+          <OSImage src="https://i.imgur.com/AmX7SXc.png" alt="mac" />
+          <h3>Mac OS X</h3>
+          <p>
+            To install double click the downloaded DMG and drag CSV Joiner into your Applications directory.
+        </p>
+        </Tile>
+        <Tile>
+        <OSImage src="https://i.imgur.com/uWIjtuj.png" alt="linux" />
+          <h3>Linux</h3>
+          <p>
+            For Linux we provide 2 types of packages, .AppImage and .snap packages.
+            To use the .AppImage file just double click the downloaded file and the system wil prompt you to install.
+        </p>
+        </Tile>
+      </Row>
+    </Section>
 
-    <br />
-    <br />
-    <br />
     <br />
     <br />
     <br />
