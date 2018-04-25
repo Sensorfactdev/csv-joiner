@@ -2,7 +2,7 @@
   "name": "csvjoiner",
   "productName": "CSV Joiner",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A desktop tool for joining CSV files",
   "scripts": {
     "dev": "electron-webpack dev",

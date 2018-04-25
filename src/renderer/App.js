@@ -92,7 +92,7 @@ class App extends Component {
       title: 'Select path to store joined file',
       message: 'Select path to store joined file',
       defaultPath: 'joined',
-      filters: [{ name: 'CSV', extensions: ['csv'] }],
+      filters: [{ name: 'CSV (*.csv)', extensions: ['csv'] }],
       buttonLabel: 'Save',
       properties: ['openFile', 'promptToCreate'],
     });

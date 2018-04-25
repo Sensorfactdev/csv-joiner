@@ -81,7 +81,15 @@ export default class DropArea extends Component {
 
   onBrowse() {
     const { onFileDrop } = this.props;
-    const files = remote.dialog.showOpenDialog({ properties: ['openFile', 'openDirectory', 'multiSelections'] });
+    const files = remote.dialog.showOpenDialog({
+      title: 'Select CSV files to join',
+      filters: [{ name: 'CSV (*.csv)', extensions: ['csv'] }],
+      properties: [
+        'openFile',
+        'multiSelections',
+        'createDirectory'
+      ]
+    });
     onFileDrop(files);
   }
 
